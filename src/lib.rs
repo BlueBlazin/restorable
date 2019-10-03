@@ -55,30 +55,23 @@ where
     }
 }
 
-// fn main() {
-//     let mut iterator = Restorable::from(0..8);
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     iterator.save();
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     iterator.restore();
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-//     println!("{:?}", iterator.next());
-// }
-
-
 
 #[cfg(test)]
 mod tests {
+    use crate::*;
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn restorable() {
+        let mut iterator = Restorable::from(0..5);
+        assert_eq!(iterator.next(), Some(0));
+        assert_eq!(iterator.next(), Some(1));
+        assert_eq!(iterator.next(), Some(2));
+        iterator.save();
+        assert_eq!(iterator.next(), Some(3));
+        assert_eq!(iterator.next(), Some(4));
+        iterator.restore();
+        assert_eq!(iterator.next(), Some(3));
+        assert_eq!(iterator.next(), Some(4));
+        assert_eq!(iterator.next(), None);
     }
 }
