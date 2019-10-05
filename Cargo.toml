@@ -1,6 +1,6 @@
 [package]
 name = "restorable"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Sanjeet N. Dasharath <sanjeetdasharath@gmail.com>"]
 description = "An iterator adapter for saving and restoring iterator state"
 license = "MIT OR Apache-2.0"

@@ -22,12 +22,20 @@ where
             saving: false,
         }
     }
+
     #[inline]
     pub fn save(&mut self) {
         self.saving = true;
     }
+
     #[inline]
     pub fn restore(&mut self) {
+        self.saving = false;
+    }
+
+    #[inline]
+    pub fn clear(&mut self) {
+        self.buf = VecDeque::with_capacity(4);
         self.saving = false;
     }
 }

@@ -52,3 +52,7 @@ Add `restorable` under `[dependecies]` with the appropriate version number in yo
 [dependencies]
 restorable = "^MAJOR.MINOR"
 ```
+
+## Changelog
+
+0.2.0 - Added `clear` to stop saving and clear the buffer.
